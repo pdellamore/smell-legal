@@ -98,7 +98,7 @@
 <main>
 
 <h1>Política de Privacidade</h1>
-<p class="meta">Smell — o diário olfativo · Última atualização: 20 de agosto de 2026</p>
+<p class="meta">Smell — o diário olfativo · Última atualização: 24 de agosto de 2026</p>
 
 <p class="lead">O Smell é um diário: você registra os perfumes que usa, e o app devolve
 o retrato do seu gosto ao longo do tempo. Esses registros são <strong>seus</strong>.
@@ -182,6 +182,16 @@ aqui (o "controlador", nos termos da Lei Geral de Proteção de Dados — Lei 13
       cidade para a ferramenta de métricas.</td>
       <td>PostHog</td>
     </tr>
+    <tr>
+      <td><strong>Relatório de falha</strong><br>(só quando o app fecha sozinho)</td>
+      <td>Descobrir e corrigir o que derruba o app. Enviamos o que descreve a falha:
+      modelo do aparelho, versão do iOS, versão do app e a pilha de execução do instante
+      em que ele fechou. <strong>Não</strong> vai junto o identificador da sua conta, nome
+      de perfume, texto que você digitou nem a sua localização. Como em qualquer acesso à
+      internet, o endereço de IP da conexão chega ao serviço; ele está configurado para
+      <strong>não guardar</strong> nem o IP nem a cidade derivada dele.</td>
+      <td>Sentry</td>
+    </tr>
   </tbody>
 </table>
 
@@ -249,6 +259,16 @@ página e a data no topo.</p>
     <tr>
       <td><strong>PostHog</strong> (métricas de produto)</td>
       <td>Eventos de uso sem conteúdo, associados ao identificador da sua conta.</td>
+      <td>Estados Unidos</td>
+    </tr>
+    <tr>
+      <td><strong>Sentry</strong> (relatório de falhas)</td>
+      <td>Somente quando o app fecha sozinho: modelo do aparelho, versão do iOS, versão do
+      app e a pilha de execução do instante da falha, com um identificador aleatório gerado
+      pelo próprio serviço para a instalação. Não enviamos o identificador da sua conta,
+      nem nome de perfume, nem a sua localização. Como em qualquer acesso à internet, o
+      endereço de IP da conexão chega ao serviço; ele está configurado para <strong>não
+      guardar</strong> nem o IP nem a cidade derivada dele.</td>
       <td>Estados Unidos</td>
     </tr>
     <tr>
@@ -342,6 +362,12 @@ pediremos <strong>um novo consentimento</strong>, em vez de presumir o antigo.</
     <tr><th>Data</th><th>O que mudou</th></tr>
   </thead>
   <tbody>
+    <tr><td>24 de agosto de 2026</td><td>Passamos a usar o <strong>Sentry</strong> para
+    receber relatório quando o app fecha sozinho. Enviamos só o que descreve a falha
+    (aparelho, versão, pilha de execução) e um identificador aleatório da instalação —
+    nunca o identificador da sua conta, nome de perfume ou a sua localização. O serviço
+    está configurado para não guardar o endereço de IP da conexão nem a cidade derivada
+    dele.</td></tr>
     <tr><td>20 de agosto de 2026</td><td>As fotos de frascos escaneados passaram a ser
     guardadas, por até 12 meses, para medir e corrigir os erros de identificação. Antes
     elas eram descartadas logo após o processamento. As coordenadas de GPS gravadas dentro
