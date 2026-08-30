@@ -98,7 +98,7 @@
 <main>
 
 <h1>Política de Privacidade</h1>
-<p class="meta">Smell — o diário olfativo · Última atualização: 24 de agosto de 2026</p>
+<p class="meta">Smell — o diário olfativo · Última atualização: 30 de agosto de 2026</p>
 
 <p class="lead">O Smell é um diário: você registra os perfumes que usa, e o app devolve
 o retrato do seu gosto ao longo do tempo. Esses registros são <strong>seus</strong>.
@@ -166,6 +166,19 @@ aqui (o "controlador", nos termos da Lei Geral de Proteção de Dados — Lei 13
       inteira, quando você usa o modo de vários frascos, <strong>não</strong> é guardada:
       só os recortes de cada frasco. Você pode apagar tudo excluindo a conta (seção 7).</td>
       <td>Aparelho e servidor (até 12 meses)</td>
+    </tr>
+    <tr>
+      <td><strong>Buscas de perfume</strong><br>(o texto que você digita para procurar um
+      frasco)</td>
+      <td>Descobrir quais perfumes faltam na nossa base de dados — é assim que sabemos o
+      que cadastrar em seguida. O texto é guardado <strong>separado da sua conta</strong>:
+      a linha não tem o seu identificador, não tem hora (apenas o dia) e não se liga a
+      nenhum outro dado seu. Não temos como saber quem buscou o quê. Guardamos
+      <strong>todas</strong> as buscas, não só as que não encontram nada: é comparando o
+      que você digitou com o frasco que você escolheu que aprendemos os apelidos de cada
+      perfume. O texto é reduzido antes de sair do aparelho (minúsculas, sem acentos, no
+      máximo 120 caracteres).</td>
+      <td>Servidor, em uma lista sem ligação com a sua conta</td>
     </tr>
     <tr>
       <td><strong>Localização aproximada</strong><br>(só com a sua permissão)</td>
@@ -237,7 +250,8 @@ página e a data no topo.</p>
     <tr>
       <td><strong>Supabase</strong> (banco de dados, autenticação e armazenamento)</td>
       <td>Todos os dados guardados no servidor: conta, nome, preferências, coleção,
-      registros de uso e as fotos de frascos que você escaneia.</td>
+      registros de uso e as fotos de frascos que você escaneia. Recebe também as buscas de
+      perfume, em uma lista à parte que não tem ligação com a sua conta.</td>
       <td>Estados Unidos</td>
     </tr>
     <tr>
@@ -248,7 +262,9 @@ página e a data no topo.</p>
     </tr>
     <tr>
       <td><strong>Fragella</strong> (base de dados de perfumes)</td>
-      <td>O texto que você busca (marca e nome do perfume). Nenhum dado seu.</td>
+      <td>O texto que você busca (marca e nome do perfume), quando ela é consultada.
+      Nenhum dado seu. Hoje a busca é atendida pela nossa própria base de perfumes; a
+      Fragella funciona como retaguarda.</td>
       <td>Internet</td>
     </tr>
     <tr>
@@ -293,7 +309,9 @@ compatíveis com a LGPD e com o Regulamento Geral de Proteção de Dados europeu
   <li><strong>Consentimento</strong> (art. 7º, I): câmera, localização e notificações.
   São opcionais, pedidos no momento do uso, e você pode revogar nos Ajustes do iOS a
   qualquer momento — o app continua funcionando sem eles.</li>
-  <li><strong>Legítimo interesse</strong> (art. 7º, IX): métricas de uso agregadas e as
+  <li><strong>Legítimo interesse</strong> (art. 7º, IX): métricas de uso agregadas, as
+  buscas de perfume desvinculadas da conta — para saber quais frascos faltam no nosso
+  catálogo — e as
   fotos de frascos escaneados, para medir e corrigir os erros de identificação — é a única
   forma de saber por que o reconhecimento falhou quando falha. A finalidade é essa e para
   de aí: se um dia quisermos usar a sua foto para outra coisa, pediremos a sua autorização
@@ -309,6 +327,11 @@ retidas por até 12 meses.</p>
 <p>As <strong>fotos de frascos</strong> ficam guardadas por até <strong>12 meses</strong>
 a contar do escaneamento, e depois são apagadas. Se você excluir a conta antes disso, elas
 vão junto, na hora (seção 7).</p>
+<p>As <strong>buscas de perfume</strong> não têm prazo, e por um motivo que preferimos
+dizer com todas as letras: como elas nunca ficaram ligadas à sua conta, <strong>não são
+apagadas quando você exclui a conta</strong> — não há como localizar quais linhas seriam
+suas. O que fica é uma lista de textos de busca e contagens, que orienta o cadastro do
+catálogo. Esse é o outro lado de guardá-las sem identificar você.</p>
 
 <h2>7. Seus direitos — e como apagar tudo</h2>
 
@@ -321,6 +344,9 @@ vão junto, na hora (seção 7).</p>
   <strong>A ação é imediata e irreversível</strong> — não há backup nem período de
   carência.
 </div>
+
+<p>As <strong>buscas de perfume</strong> ficam de fora dessa exclusão, porque nunca
+estiveram ligadas à sua conta — não há o que localizar. A seção 6 explica.</p>
 
 <p>A LGPD também garante a você o direito de confirmar a existência de tratamento,
 acessar seus dados, corrigi-los, solicitar a portabilidade ou o bloqueio, revogar
@@ -362,6 +388,15 @@ pediremos <strong>um novo consentimento</strong>, em vez de presumir o antigo.</
     <tr><th>Data</th><th>O que mudou</th></tr>
   </thead>
   <tbody>
+    <tr><td>30 de agosto de 2026</td><td>Passamos a guardar o <strong>texto das buscas de
+    perfume</strong> em uma lista <strong>separada da sua conta</strong>, sem
+    identificador e sem hora (apenas o dia), para descobrir quais frascos faltam no nosso
+    catálogo. <strong>E corrigimos uma omissão desta política:</strong> antes desta
+    versão, o texto que você digitava já era guardado — só que dentro do registro técnico
+    da busca, <em>associado à sua conta e com hora exata</em> —, e esta página não dizia
+    isso. Esse registro deixou de guardar o texto: agora ele fica apenas na lista anônima
+    descrita acima. Na prática, guardamos <strong>menos</strong> sobre você do que
+    antes.</td></tr>
     <tr><td>24 de agosto de 2026</td><td>Passamos a usar o <strong>Sentry</strong> para
     receber relatório quando o app fecha sozinho. Enviamos só o que descreve a falha
     (aparelho, versão, pilha de execução) e um identificador aleatório da instalação —
