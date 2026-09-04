@@ -98,7 +98,7 @@
 <main>
 
 <h1>Política de Privacidade</h1>
-<p class="meta">Smell — o diário olfativo · Última atualização: 30 de agosto de 2026</p>
+<p class="meta">Smell — o diário olfativo · Última atualização: 4 de setembro de 2026</p>
 
 <p class="lead">O Smell é um diário: você registra os perfumes que usa, e o app devolve
 o retrato do seu gosto ao longo do tempo. Esses registros são <strong>seus</strong>.
@@ -134,8 +134,29 @@ aqui (o "controlador", nos termos da Lei Geral de Proteção de Dados — Lei 13
       <td>Aparelho e servidor</td>
     </tr>
     <tr>
+      <td><strong>E-mail</strong><br>(se você entrar com a Apple e autorizar)</td>
+      <td>Reconhecer a sua conta quando você entra de novo — inclusive em outro aparelho —
+      e, <strong>se e quando você marcar a caixa de novidades</strong>, escrever para você.
+      Quem manda o endereço é a Apple, e ela deixa você esconder o real e enviar um
+      endereço privado do tipo <code>@privaterelay.appleid.com</code>: para nós os dois
+      funcionam igual. <strong>Hoje o Smell não envia e-mail nenhum</strong> — nem de
+      novidades, nem de qualquer outro tipo. Você pode marcar e desmarcar a autorização nos
+      Ajustes do app a qualquer momento.</td>
+      <td>Servidor (cadastro de autenticação)</td>
+    </tr>
+    <tr>
       <td><strong>Preferências olfativas</strong><br>(famílias, intensidade, ocasiões)</td>
       <td>Ordenar as sugestões do dia. Você informa no início e pode deixar em branco.</td>
+      <td>Aparelho e servidor</td>
+    </tr>
+    <tr>
+      <td><strong>Faixa etária e gênero</strong><br>(opcionais)</td>
+      <td>Entender o público do app <strong>em números somados</strong> — por exemplo,
+      quais famílias olfativas aparecem mais em cada faixa de idade. O app pergunta
+      <strong>uma vez</strong>, depois que você já está usando; você pode responder só uma
+      das duas, escolher "prefiro não dizer" ou fechar sem responder, e a pergunta não
+      volta. Essas respostas <strong>não mudam as suas sugestões</strong> e
+      <strong>não</strong> são enviadas para a ferramenta de métricas.</td>
       <td>Aparelho e servidor</td>
     </tr>
     <tr>
@@ -209,12 +230,23 @@ aqui (o "controlador", nos termos da Lei Geral de Proteção de Dados — Lei 13
 </table>
 
 <h3>Login com a Apple</h3>
-<p>O Smell usa o <strong>Sign in with Apple</strong>. Pedimos à Apple apenas o
-<strong>seu nome</strong> — não solicitamos o seu e-mail. A Apple nos envia um
-identificador exclusivo para este app; se ela também nos enviar um endereço de e-mail
-(inclusive o endereço privado do tipo <code>@privaterelay.appleid.com</code>), ele fica
-guardado no cadastro de autenticação e é usado apenas para reconhecer a sua conta quando
-você entrar novamente. Não enviamos e-mails de marketing.</p>
+<p>O Smell usa o <strong>Sign in with Apple</strong>. Pedimos à Apple <strong>o seu nome e
+o seu e-mail</strong> — e é a tela da Apple, não a nossa, que decide o que sai: você vê os
+dois campos antes de confirmar, pode editar o nome, pode escolher
+<em>Ocultar meu e-mail</em> (aí recebemos um endereço privado do tipo
+<code>@privaterelay.appleid.com</code>) e pode simplesmente não autorizar. A Apple nos
+envia um identificador exclusivo para este app, e é ele — não o e-mail — que liga você aos
+seus dados.</p>
+<p>O endereço fica guardado no cadastro de autenticação e serve para reconhecer a sua conta
+quando você entra de novo. <strong>Só o usamos para escrever a você se você marcar a caixa
+de novidades</strong>, na pergunta que o app faz uma vez ou nos Ajustes — e ela nasce
+desmarcada. <strong>Hoje não enviamos e-mail nenhum:</strong> não existe envio no ar, e
+esta linha muda junto no dia em que existir. Desmarcar nos Ajustes retira a autorização a
+qualquer momento.</p>
+<p>Um detalhe que preferimos dizer: a Apple só entrega nome e e-mail na
+<strong>primeira vez</strong> que você autoriza este app. Se você já entrou antes, ela não
+volta a perguntar sozinha — nesse caso não temos o seu endereço, e a caixa de novidades
+fica sem efeito prático até que você reautorize o app pelos Ajustes do iOS.</p>
 
 <h3>Notificações</h3>
 <p>Os lembretes do Smell são <strong>notificações locais</strong>: são agendadas e
@@ -228,8 +260,10 @@ sai do celular para isso, e você pode desligá-las nos Ajustes do iOS a qualque
   <li><strong>Não rastreamos você</strong> em outros aplicativos ou sites, e não usamos o
   identificador de publicidade do iOS (IDFA). Por isso o app nunca pede permissão de
   rastreamento.</li>
-  <li><strong>Não acessamos</strong> seus contatos, seu calendário, seus e-mails, sua
-  galeria de fotos (só a câmera, quando você a abre) nem seu histórico de navegação.</li>
+  <li><strong>Não acessamos</strong> seus contatos, seu calendário, <strong>a sua caixa de
+  e-mail</strong>, sua galeria de fotos (só a câmera, quando você a abre) nem seu histórico
+  de navegação. Guardar o seu endereço de e-mail, com a sua autorização, é outra coisa: ele
+  é um dado de cadastro, e não uma porta para o que está dentro do seu correio.</li>
   <li><strong>Não armazenamos</strong> as suas coordenadas geográficas — nem as do clima,
   nem as que a câmera grava dentro da foto (essas são removidas antes de a imagem sair do
   aparelho).</li>
@@ -249,9 +283,10 @@ página e a data no topo.</p>
   <tbody>
     <tr>
       <td><strong>Supabase</strong> (banco de dados, autenticação e armazenamento)</td>
-      <td>Todos os dados guardados no servidor: conta, nome, preferências, coleção,
-      registros de uso e as fotos de frascos que você escaneia. Recebe também as buscas de
-      perfume, em uma lista à parte que não tem ligação com a sua conta.</td>
+      <td>Todos os dados guardados no servidor: conta, nome, e-mail, preferências, faixa
+      etária e gênero (se você responder), coleção, registros de uso e as fotos de frascos
+      que você escaneia. Recebe também as buscas de perfume, em uma lista à parte que não
+      tem ligação com a sua conta.</td>
       <td>Estados Unidos</td>
     </tr>
     <tr>
@@ -305,10 +340,14 @@ compatíveis com a LGPD e com o Regulamento Geral de Proteção de Dados europeu
 <h2>5. Por que podemos tratar esses dados</h2>
 <ul>
   <li><strong>Execução do contrato</strong> (art. 7º, V da LGPD): conta, coleção e
-  registros de uso — sem eles o app simplesmente não existe.</li>
-  <li><strong>Consentimento</strong> (art. 7º, I): câmera, localização e notificações.
-  São opcionais, pedidos no momento do uso, e você pode revogar nos Ajustes do iOS a
-  qualquer momento — o app continua funcionando sem eles.</li>
+  registros de uso — sem eles o app simplesmente não existe. Entra aqui também o
+  <strong>e-mail como dado de cadastro</strong>: é o que permite reconhecer a sua conta
+  quando você entra de novo.</li>
+  <li><strong>Consentimento</strong> (art. 7º, I): câmera, localização, notificações,
+  <strong>faixa etária e gênero</strong> e o <strong>envio de novidades por e-mail</strong>.
+  São opcionais, pedidos no momento do uso, e você pode revogar a qualquer momento — as
+  permissões do iOS nos Ajustes do iOS, e as novidades nos Ajustes do próprio app. O app
+  continua funcionando sem qualquer um deles.</li>
   <li><strong>Legítimo interesse</strong> (art. 7º, IX): métricas de uso agregadas, as
   buscas de perfume desvinculadas da conta — para saber quais frascos faltam no nosso
   catálogo — e as
@@ -339,7 +378,8 @@ catálogo. Esse é o outro lado de guardá-las sem identificar você.</p>
   <strong>Excluir a conta, de dentro do app:</strong> abra a tela inicial, toque na
   engrenagem no canto superior e escolha <strong>Excluir conta</strong>. Depois de duas
   confirmações, apagamos do servidor os seus registros de uso, a sua coleção, as fotos de
-  frascos que você escaneou e o seu perfil, encerramos a sua conta de autenticação e
+  frascos que você escaneou e o seu perfil — incluindo faixa etária, gênero e a autorização
+  de novidades —, encerramos a sua conta de autenticação, que é onde o seu e-mail fica, e
   limpamos os dados do aparelho.
   <strong>A ação é imediata e irreversível</strong> — não há backup nem período de
   carência.
@@ -388,6 +428,18 @@ pediremos <strong>um novo consentimento</strong>, em vez de presumir o antigo.</
     <tr><th>Data</th><th>O que mudou</th></tr>
   </thead>
   <tbody>
+    <tr><td>4 de setembro de 2026</td><td>Três mudanças, todas de coleta nova:
+    <strong>(1)</strong> o login com a Apple passou a <strong>pedir também o seu
+    e-mail</strong> — antes pedíamos só o nome. Quem decide se ele sai é você, na tela da
+    Apple, e o endereço serve para reconhecer a sua conta. <strong>(2)</strong> o app
+    passou a perguntar, <strong>uma vez</strong> e depois que você já está usando,
+    <strong>faixa etária e gênero</strong>, para entender o público em números somados —
+    responder é opcional, dispensar é definitivo e as respostas não mudam as suas
+    sugestões nem vão para a ferramenta de métricas. <strong>(3)</strong> existe agora uma
+    <strong>caixa de autorização para receber novidades por e-mail</strong>, desmarcada por
+    padrão e revogável nos Ajustes do app. <strong>Nada é enviado por enquanto:</strong>
+    não há envio de e-mail no ar nesta versão; a autorização fica guardada para quando
+    houver, e esta página muda junto nesse dia.</td></tr>
     <tr><td>30 de agosto de 2026</td><td>Passamos a guardar o <strong>texto das buscas de
     perfume</strong> em uma lista <strong>separada da sua conta</strong>, sem
     identificador e sem hora (apenas o dia), para descobrir quais frascos faltam no nosso
